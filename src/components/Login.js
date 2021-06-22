@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function Login() {
   //login logic
   const [username, setUsername] = useState("");
@@ -30,6 +31,7 @@ function Login() {
   }
   return (
     <>
+      <Link to="/NationalMap"> Bypass login to Map</Link>
       <label as="h2">Login</label>
       <form onSubmit={handleLogin}>
         <label>Username</label>
