@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LineChart from "./LineChart";
 import BarGraph from "./BarGraph";
+import PieChart from "./Piechart";
 function StatePage() {
   const [currentState, setCurrentState] = useState();
   const { abbrv } = useParams();
@@ -22,8 +23,9 @@ function StatePage() {
       <div>{currentState.name}</div>
       <div>{currentState.abbreviation}</div>
       <div>{currentState.population}</div>
-      <LineChart />
-      <BarGraph />
+      {/* <LineChart cuurentState = {charData}/>
+      <BarGraph /> */}
+      <PieChart />
     </>
   );
 }

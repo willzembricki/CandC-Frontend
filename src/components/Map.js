@@ -13,6 +13,14 @@ function Map() {
 
   return (
     <div className="App">
+      <h1>C & C</h1>
+      <h3>Census and Crime Data</h3>
+      <p>
+        *Please select the state you would like to see information for. Not all
+        states fully report crime data. This can lead to disparities in the
+        percentages. Please got to the FBI CrimeData website to see reporting
+        amounts per state.*
+      </p>
       <USAMap
         //   customize={this.statesCustomConfig()}
         width="650"
