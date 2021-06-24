@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 function Login() {
   //login logic
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
   let jwt_token = localStorage.getItem("token");
   function handleLogin(e) {
     e.preventDefault();
@@ -26,13 +27,13 @@ function Login() {
         }
         localStorage.token = userInfo.token;
         localStorage.setItem(`userId`, `${userInfo.user.id}`);
+        history.push("/NationalMap");
       });
     console.log(localStorage.token);
   }
   return (
     <>
-      <Link to="/NationalMap"> Bypass login to Map</Link>
-      <label as="h2">Login</label>
+      <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <label>Username</label>
         <input

@@ -1,7 +1,8 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
-const PieChart = ({ chartData }) => {
+import { Doughnut } from "react-chartjs-2";
+const PieChartO = ({ chartData }) => {
   // piechart doesnt need percentages. we can feed it whatecer is needed as long as labels match.
+  console.log(chartData);
   const data = {
     labels: [
       "Asian",
@@ -15,12 +16,12 @@ const PieChart = ({ chartData }) => {
       {
         label: "# of Votes",
         data: [
-          chartData.asianPop,
-          chartData.native_hawaiian,
-          chartData.black,
-          chartData.american_indian,
-          chartData.unkown,
-          chartData.white,
+          chartData[0].asianPopO,
+          chartData[0].native_hawaiianO,
+          chartData[0].blackO,
+          chartData[0].american_indianO,
+          chartData[0].unknownO,
+          chartData[0].whiteO,
         ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.5)",
@@ -42,17 +43,19 @@ const PieChart = ({ chartData }) => {
       },
     ],
   };
+  console.log(data);
+  const nameOfCrime = chartData[0].crimeName.split("-").join(" ");
   return (
     <>
       <div className="header">
-        <h1 className="title">State Population Breakdown</h1>
-        <div className="links"></div>
+        <h1 className="title">Arrest Records Breakdown</h1>
+        <h2>{nameOfCrime}</h2>
       </div>
       <div className="chart">
-        <Pie data={data} height="200px" />
+        <Doughnut data={data} height="200px" />
       </div>
     </>
   );
 };
 
-export default PieChart;
+export default PieChartO;
